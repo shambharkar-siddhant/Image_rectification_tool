@@ -1,1 +1,102 @@
-<h1> Hello </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, My Love!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 20px;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    .heart {
+      width: 150px;
+      height: 150px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Heart_symbol.svg/1200px-Heart_symbol.svg.png');
+      background-size: cover;
+      margin: 20px auto;
+      cursor: pointer;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .message {
+      font-size: 1.5em;
+      margin: 20px;
+      display: none;
+      transition: opacity 0.5s ease;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Happy Birthday, My Love!</h1>
+    <div class="heart" id="heart"></div>
+    <p>Click on the heart to reveal my secret message!</p>
+    <div class="message" id="secretMessage">
+      <p>
+        You are the sunshine in my life, my inspiration, and my greatest joy.
+        Every moment with you is a precious memory.
+      </p>
+    </div>
+    <h2>A Gallery of Our Memories</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/featured/?love" alt="Love Image 1" />
+      <img src="https://source.unsplash.com/featured/?romance" alt="Love Image 2" />
+      <img src="https://source.unsplash.com/featured/?birthday" alt="Love Image 3" />
+    </div>
+  </div>
+
+  <script>
+    // Toggle the secret message when the heart is clicked
+    document.getElementById('heart').addEventListener('click', function () {
+      var message = document.getElementById('secretMessage');
+      if (message.style.display === "none" || message.style.display === "") {
+        message.style.display = "block";
+      } else {
+        message.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
+
